@@ -5,7 +5,7 @@ VERSION := 7
 GCC4IMAGE := $(FAMILY):gcc4-$(VERSION)
 BASEIMAGE := quay.io/geodocker/jupyter-geopyspark:base-$(VERSION)
 INTERFACE ?= eth0
-IP_ADDR := $(shell ifconfig $(INTERFACE) | grep -i mask | awk '{print $$2}' | cut -f2 -d:)
+IP_ADDR ?= $(shell ifconfig $(INTERFACE) | grep -i mask | awk '{print $$2}' | cut -f2 -d:)
 
 all:
 	echo "see build.sh"
