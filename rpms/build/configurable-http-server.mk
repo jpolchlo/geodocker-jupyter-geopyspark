@@ -12,13 +12,13 @@ archives/ipykernel.zip: archives/ipykernel-629ac54cae9767310616d47d769665453619a
 	rm -r ipykernel-629ac54cae9767310616d47d769665453619ac64/
 
 rpmbuild/RPMS/x86_64/nodejs-8.5.0-13.x86_64.rpm: rpmbuild/SPECS/nodejs.spec scripts/nodejs.sh rpmbuild/SOURCES/node-v8.5.0.tar.gz
-	docker run -it --rm \
+	docker run -i --rm \
           -v $(shell pwd)/rpmbuild:/tmp/rpmbuild:rw \
           -v $(shell pwd)/scripts:/scripts:ro \
           $(GCC4IMAGE) /scripts/nodejs.sh $(shell id -u) $(shell id -g)
 
 rpmbuild/RPMS/x86_64/configurable-http-proxy-0.0.0-13.x86_64.rpm: rpmbuild/SPECS/configurable-http-proxy.spec rpmbuild/RPMS/x86_64/nodejs-8.5.0-13.x86_64.rpm
-	docker run -it --rm \
+	docker run -i --rm \
           -v $(shell pwd)/archives:/archives:ro \
           -v $(shell pwd)/rpmbuild:/tmp/rpmbuild:rw \
           -v $(shell pwd)/scripts:/scripts:ro \
