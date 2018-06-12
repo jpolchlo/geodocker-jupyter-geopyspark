@@ -3,12 +3,16 @@
 USERID=$1
 GROUPID=$2
 
-ldconfig
-
 source /opt/rh/python27/enable
 source /opt/rh/devtoolset-6/enable
 
-cd /tmp/rpmbuild
-chown -R root:root /tmp/rpmbuild/SOURCES/node-v8.5.0.tar.gz
+set -x
+set -e
+
+ldconfig
+
+cp -R /tmp/rpmbuild /tmp/working
+cd /tmp/working
 rpmbuild -v -bb --clean SPECS/nodejs.spec
-chown -R $USERID:$GROUPID /tmp/rpmbuild
+chown -R $USERID:$GROUPID /tmp/working/RPMS
+cp RPMS/x86_64/nodejs* /tmp/rpmbuild/RPMS/x86_64

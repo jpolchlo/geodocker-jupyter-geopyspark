@@ -3,9 +3,16 @@
 USERID=$1
 GROUPID=$2
 
+source /opt/rh/python27/enable
+source /opt/rh/devtoolset-6/enable
+
+set -x
+set -e
+
 ldconfig
 
-cd /tmp/rpmbuild
-chown -R root:root /tmp/rpmbuild/SOURCES/proj-4.9.3.tar.gz
+cp -R /tmp/rpmbuild /tmp/working
+cd /tmp/working
 rpmbuild -v -bb --clean SPECS/proj.spec
-chown -R $USERID:$GROUPID /tmp/rpmbuild
+chown -R $USERID:$GROUPID /tmp/working/RPMS
+cp RPMS/x86_64/proj493* /tmp/rpmbuild/RPMS/x86_64

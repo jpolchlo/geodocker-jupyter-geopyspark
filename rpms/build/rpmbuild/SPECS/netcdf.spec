@@ -1,4 +1,4 @@
-%define _topdir   /tmp/rpmbuild
+%define _topdir   /tmp/working
 %define name      netcdf
 %define release   33
 %define version   4.5.0

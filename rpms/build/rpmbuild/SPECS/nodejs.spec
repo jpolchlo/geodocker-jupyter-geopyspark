@@ -1,4 +1,4 @@
-%define _topdir   /tmp/rpmbuild
+%define _topdir   /tmp/working
 %define name      nodejs
 %define release   13
 %define version   8.5.0

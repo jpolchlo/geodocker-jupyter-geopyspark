@@ -1,4 +1,4 @@
-%define _topdir   /tmp/rpmbuild
+%define _topdir   /tmp/working
 %define name      hdf5
 %define release   33
 %define version   1.8.20

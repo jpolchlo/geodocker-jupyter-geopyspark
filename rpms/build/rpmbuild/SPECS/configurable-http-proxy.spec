@@ -1,4 +1,4 @@
-%define _topdir   /tmp/rpmbuild
+%define _topdir   /tmp/working
 %define name      configurable-http-proxy
 %define release   13
 %define version   0.0.0
