@@ -4,6 +4,9 @@ rpmbuild/SOURCES/proj-4.9.3.tar.gz:
 rpmbuild/SOURCES/hdf5-1.8.20.tar.bz2:
 	curl -L "https://support.hdfgroup.org/ftp/HDF5/current18/src/hdf5-1.8.20.tar.bz2" -o $@
 
+rpmbuild/SOURCES/geos-3.6.1.tar.bz2:
+	curl -L "https://download.osgeo.org/geos/geos-3.6.1.tar.bz2" -o $@
+
 rpmbuild/SOURCES/netcdf-4.5.0.tar.gz:
 	curl -L "ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.5.0.tar.gz" -o $@
 

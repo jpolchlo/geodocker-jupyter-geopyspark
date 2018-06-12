@@ -3,6 +3,9 @@
 USERID=$1
 GROUPID=$2
 
+source /opt/rh/python27/enable
+source /opt/rh/devtoolset-6/enable
+
 yum install -y /tmp/rpmbuild/RPMS/x86_64/nodejs-8.5.0-13.x86_64.rpm
 ldconfig
 

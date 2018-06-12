@@ -95,13 +95,13 @@ variable "oauth_client_secret" {
 variable "geopyspark_jars" {
   type        = "string"
   description = "Comma-separated list of URIs pointing to GeoPySpark jars"
-  default     = "s3://geopyspark-dependency-jars/geotrellis-backend-assembly-0.4.1.jar"
+  default     = "s3://geopyspark-dependency-jars/geotrellis-backend-assembly-0.4.2.jar"
 }
 
 variable "geopyspark_uri" {
   type        = "string"
   description = "URI from which the GeoPySpark Python code is to be obtained"
-  default     = "https://github.com/locationtech-labs/geopyspark/archive/d03d95fcd0e24cfca7df81fa56dcd84e30035a0f.zip"
+  default     = "https://github.com/locationtech-labs/geopyspark/archive/5abeea24e4dc3b41a6ba45702b946374b47c5165.zip"
 }
 
 variable "bid_price" {

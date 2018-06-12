@@ -16,7 +16,7 @@ Prefix:    /usr/local
 Group:     Azavea
 Requires:  libpng
 Requires:  libcurl
-Requires:  libgeos
+Requires:  geos-devel
 Requires:  hdf5
 Requires:  netcdf
 BuildRequires: geos-devel
@@ -35,7 +35,7 @@ GDAL
 %setup -q -n gdal-2.1.3
 
 %build
-LDFLAGS='-L/usr/local/lib -L/usr/local/lib64' CC='gcc48' ./configure --prefix=/usr/local
+LDFLAGS='-L/usr/local/lib -L/usr/local/lib64' CC='gcc' ./configure --prefix=/usr/local
 nice -n 19 make -k -j$(grep -c ^processor /proc/cpuinfo) || make
 
 %install
