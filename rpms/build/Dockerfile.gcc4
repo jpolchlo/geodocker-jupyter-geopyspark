@@ -23,4 +23,7 @@ RUN yum install -y centos-release-scl
 RUN yum -y install devtoolset-6 devtoolset-6-libatomic-devel python27
 RUN yum makecache fast
 
+RUN yum install -y sudo && \
+    echo 'ALL ALL=NOPASSWD: /usr/bin/cp' | tee -a /etc/sudoers
+
 RUN echo -e "source /opt/rh/python27/enable\nsource /opt/rh/devtoolset-6/enable" >> /etc/bashrc

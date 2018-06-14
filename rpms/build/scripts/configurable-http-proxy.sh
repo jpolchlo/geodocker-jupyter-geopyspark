@@ -12,8 +12,7 @@ set -e
 yum install -y /tmp/rpmbuild/RPMS/x86_64/nodejs-8.5.0-13.x86_64.rpm
 ldconfig
 
-cp /tmp/rpmbuild /tmp/working
+cp -R /tmp/rpmbuild /tmp/working
 cd /tmp/working
 rpmbuild -v -bb --clean SPECS/configurable-http-proxy.spec
-chown -R $USERID:$GROUPID /tmp/rpmbuild
-cp /tmp/working/RPMS/x86_64/configurable-http-proxy* /tmp/rpmbuild/RPMS/x86_64
+/usr/bin/sudo -u \#${USERID} -g \#${GROUPID} cp RPMS/x86_64/configurable-http-proxy* /tmp/rpmbuild/RPMS/x86_64

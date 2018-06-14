@@ -14,7 +14,8 @@ yum localinstall -y \
 ldconfig
 
 mkdir -p /usr/share/jupyter/kernels
-cd /wheel
+mkdir /tmp/wheel
+cd /tmp/wheel
 export CC=gcc
 pip3.4 install numpy==1.12.1
 pip3.4 wheel -r requirements.txt
@@ -64,4 +65,4 @@ rm -f affine-2.0.0.post1-py3-none-any.whl \
    tornado-5.0-cp34-cp34m-linux_x86_64.whl \
    tornado-5.0.2-cp34-cp34m-linux_x86_64.whl \
    traitlets-4.3.1-py2.py3-none-any.whl
-chown -R $USERID:$GROUPID .
+/usr/bin/sudo -u \#${USERID} -g \#${GROUPID} cp *.whl /wheel

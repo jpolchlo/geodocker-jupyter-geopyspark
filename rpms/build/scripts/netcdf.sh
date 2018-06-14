@@ -16,5 +16,4 @@ ldconfig
 cp -R /tmp/rpmbuild /tmp/working
 cd /tmp/working
 rpmbuild -v -bb --clean SPECS/netcdf.spec
-chown -R $USERID:$GROUPID /tmp/working/RPMS
-cp RPMS/x86_64/netcdf* /tmp/rpmbuild/RPMS/x86_64
+/usr/bin/sudo -u \#${USERID} -g \#${GROUPID} cp RPMS/x86_64/netcdf* /tmp/rpmbuild/RPMS/x86_64

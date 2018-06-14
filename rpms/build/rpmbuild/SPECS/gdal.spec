@@ -1,4 +1,4 @@
-%define _topdir   /tmp/rpmbuild
+%define _topdir   /tmp/working
 %define name      gdal213
 %define release   33
 %define version   2.1.3
