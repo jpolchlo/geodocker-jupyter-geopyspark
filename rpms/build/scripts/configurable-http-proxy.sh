@@ -15,4 +15,5 @@ ldconfig
 cp -R /tmp/rpmbuild /tmp/working
 cd /tmp/working
 rpmbuild -v -bb --clean SPECS/configurable-http-proxy.spec
-/usr/bin/sudo -u \#${USERID} -g \#${GROUPID} cp RPMS/x86_64/configurable-http-proxy* /tmp/rpmbuild/RPMS/x86_64
+chmod 666 RPMS/x86_64/configurable-http-proxy*
+cp RPMS/x86_64/configurable-http-proxy* /tmp/rpmbuild/RPMS/x86_64

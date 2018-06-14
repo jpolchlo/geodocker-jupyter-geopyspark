@@ -14,4 +14,5 @@ ldconfig
 cp -R /tmp/rpmbuild /tmp/working
 cd /tmp/working
 rpmbuild -v -bb --clean SPECS/nodejs.spec
-/usr/bin/sudo -u \#${USERID} -g \#${GROUPID} cp RPMS/x86_64/nodejs* /tmp/rpmbuild/RPMS/x86_64
+chmod 666 RPMS/x86_64/nodejs*
+cp RPMS/x86_64/nodejs* /tmp/rpmbuild/RPMS/x86_64
