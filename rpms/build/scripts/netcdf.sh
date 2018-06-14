@@ -16,5 +16,6 @@ ldconfig
 cp -R /tmp/rpmbuild /tmp/working
 cd /tmp/working
 rpmbuild -v -bb --clean SPECS/netcdf.spec
+mkdir -p /tmp/rpmbuild/RPMS/x86_64
 chmod 666 RPMS/x86_64/netcdf*
 cp RPMS/x86_64/netcdf* /tmp/rpmbuild/RPMS/x86_64
