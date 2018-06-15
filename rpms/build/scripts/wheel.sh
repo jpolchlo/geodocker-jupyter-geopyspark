@@ -65,4 +65,4 @@ rm -f affine-2.0.0.post1-py3-none-any.whl \
    tornado-5.0-cp34-cp34m-linux_x86_64.whl \
    tornado-5.0.2-cp34-cp34m-linux_x86_64.whl \
    traitlets-4.3.1-py2.py3-none-any.whl
-/usr/bin/sudo -u \#${USERID} -g \#${GROUPID} cp *.whl /wheel
+cp *.whl /wheel
