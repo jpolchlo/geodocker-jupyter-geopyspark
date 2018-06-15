@@ -11,7 +11,8 @@ License:   BSD-3
 Name:      %{name}
 Version:   %{version}
 Release:   %{release}
-Source:    configurable-http-proxy.tar
+#Source:    configurable-http-proxy.tar
+#NoSource:  0
 Prefix:    /usr/local
 Group:     Development
 AutoReq:   no
@@ -25,8 +26,8 @@ BuildRequires: nodejs
 %description
 configurable-http-proxy
 
-%prep
-%setup -q -n configurable-http-proxy
+#%prep
+#%setup -q -n configurable-http-proxy
 
 %build
 echo
