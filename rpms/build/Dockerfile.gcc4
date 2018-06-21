@@ -3,7 +3,7 @@ MAINTAINER James McClain <james.mcclain@gmail.com>
 
 RUN yum -y groupinstall "Development Tools" || echo
 RUN yum install -y epel-release && yum -y install python34-setuptools cmake less nano && yum clean all
-RUN easy_install-3.4 pip
+RUN easy_install-3.4 pip && yum -y install python34-devel
 RUN pip install wheel && ln -s /usr/include/python3.4m /usr/include/python3.4
 RUN yum clean all -y && yum update -y && \
     yum install -y \
@@ -19,8 +19,7 @@ RUN yum clean all -y && yum update -y && \
       rpm-build \
       which \
       zlib-devel
-RUN yum install -y centos-release-scl
-RUN yum -y install devtoolset-6 devtoolset-6-libatomic-devel python27
+RUN yum install -y centos-release-scl && yum -y install devtoolset-6 devtoolset-6-libatomic-devel python27
 RUN yum makecache fast
 
 RUN echo -e "source /opt/rh/python27/enable\nsource /opt/rh/devtoolset-6/enable" >> /etc/bashrc
